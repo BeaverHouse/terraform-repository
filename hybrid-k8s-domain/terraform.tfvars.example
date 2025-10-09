@@ -1,0 +1,10 @@
+# Copy this file to terraform.tfvars and update values
+
+aws_region = "us-west-2"
+
+tags = {
+  Environment = "production"
+  Project     = "hybrid-k8s-terraform"
+  ManagedBy   = "terraform"
+  Owner       = "your-team"
+}
