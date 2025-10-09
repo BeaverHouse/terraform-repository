@@ -85,7 +85,7 @@ aws sts get-caller-identity --profile personal
 
 ### 3. Postgres Backend 설정 (Supabase)
 
-Terraform 상태를 Postgres에 저장하기 위해 다음 환경변수를 설정하세요:
+Terraform 상태를 Postgres에 저장하기 위해 다음 환경변수를 설정하세요:[^1]
 
 ```bash
 export PG_CONN_STR="postgres://username:password@hostname:port/database?sslmode=require"
@@ -178,3 +178,5 @@ stringData:
 - Access Key와 Secret Key는 안전하게 관리하세요
 - Kubernetes Secret으로 저장할 때 base64 인코딩이 자동으로 처리됩니다
 - Postgres 연결 정보는 안전하게 관리하세요 (환경변수 권장)
+
+[^1]: https://developer.hashicorp.com/terraform/language/backend/pg
