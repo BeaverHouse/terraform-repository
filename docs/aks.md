@@ -16,7 +16,8 @@ AVM modules follow a consistent specification: standard inputs, telemetry, lifec
 
 - **[Azure/avm-res-network-virtualnetwork/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-virtualnetwork/azurerm/latest)** — VNet. Replaces the deprecated `Azure/vnet/azurerm`.
 - **[Azure/avm-res-network-natgateway/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-natgateway/azurerm/latest)** — NAT Gateway, for deterministic egress IPs (required when external services allowlist by IP).
-- **[Azure/avm-res-network-applicationgateway/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-applicationgateway/azurerm/latest)** — Application Gateway. Use with AGIC for L7 ingress backed by Azure infrastructure.
+- **[Azure/avm-res-network-applicationgateway/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-applicationgateway/azurerm/latest)** — Application Gateway (AGW). Use with AGIC for the legacy Ingress-API path. For new clusters, prefer AGC below.
+- **[Azure/terraform-azurerm-avm-res-servicenetworking-trafficcontroller](https://github.com/Azure/terraform-azurerm-avm-res-servicenetworking-trafficcontroller)** — Application Gateway for Containers (AGC). Microsoft's recommended Gateway API implementation for AKS, paired with the ALB Controller. Serverless data plane, automatic scaling. Source-only at the moment; not yet published to the Terraform Registry — consume via Git source.
 - **[Azure/avm-res-network-networksecuritygroup/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-networksecuritygroup/azurerm/latest)** — Network Security Groups.
 - **[Azure/avm-res-network-publicipaddress/azurerm](https://registry.terraform.io/modules/Azure/avm-res-network-publicipaddress/azurerm/latest)** — Public IP. Often needed alongside NAT Gateway and AGW.
 
